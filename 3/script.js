@@ -1,7 +1,11 @@
 (function($) {
     $('.start').click(function (e) {
         e.preventDefault();
+        if($(this).text() == 'Обновить') {
+            clearInterval($timer);
+        }
         $(this).text('Обновить');
+
         game();
     })
     $('.show').click(function (e) {
@@ -48,12 +52,15 @@
         $('.pole').html($text);
 
         let check = false, selcolor = 0, sela, steps = 0, open = 0, timer, a = $('.pole').find('a');
-        console.log(a);
+
         for(let i = 0; i < a.length; i++){
             $(a[i]).bind('click', function(e){
 
                 steps++;
                 let el = $(this);
+                if (!el.hasClass('hidden')) {
+                    return false;
+                }
                 //временно показываем цвет кликнутого блока
                 el.toggleClass('hidden');
                 setTimeout(function(){

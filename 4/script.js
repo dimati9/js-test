@@ -11,12 +11,12 @@
 
                     if ($i == 1 || $i == 10) {
                         if ($c == 1 || $c == 10) {
-                            $('<a>', {href: '#', text: '', 'data-system': 'i='+$i+'c='+$c}).appendTo('.table');
+                            $('<a>', {href: '#', class: 'empty', text: '', 'data-system': 'i='+$i+'c='+$c}).appendTo('.table');
                         } else {
-                            $('<a>', {href: '#', text: ($decode[$c-1]), 'data-system': 'i='+$i+'c='+$c}).appendTo('.table');
+                            $('<a>', {href: '#', class: 'empty', text: ($decode[$c-1]), 'data-system': 'i='+$i+'c='+$c}).appendTo('.table');
                         }
                     } else if ($c == 1 || $c == 10) {
-                        $('<a>', {href: '#', text: ($i-1), 'data-system': 'i='+$i+'c='+$c}).appendTo('.table');
+                        $('<a>', {href: '#', class: 'empty',text: ($i-1), 'data-system': 'i='+$i+'c='+$c}).appendTo('.table');
                     }
                     else {
                         $('<a>', { href: '#', class: $decode[$c-1]+($i-1), 'data-system': 'i='+$i+'c='+$c}).appendTo('.table');
@@ -26,6 +26,10 @@
         }
 
         $('a').click(function () {
+            if($(this).hasClass('empty')) {
+                return false;
+            }
+
             if (!$(this).hasClass('select')) {
                 $('.table').find('a').each(function () {
                     $(this).removeClass('permissible');
