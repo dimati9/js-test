@@ -1,0 +1,58 @@
+.pole {
+	width: 308px;
+	height: 308px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+a {
+	display: block;
+	width: 75px;
+	height: 75px;
+	border: 1px solid #000;
+}
+h2 {
+
+	height: 30px;
+	border: none;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+.control-btn {
+	width: 100px;
+	height: 30px;
+	border: none;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.color1 {
+	background-color: #0d64c6;
+}
+.color2 {
+	background-color: #1AA0D0;
+}
+.color3 {
+	background-color: #ffff00;
+}
+.color4 {
+	background-color: #ff3a3a;
+}
+.color5 {
+	background-color: #1dc116;
+}
+.color6 {
+	background-color: #f8d7da;
+}
+.color7 {
+	background-color: #7f007f;
+}
+.color8 {
+	background-color: #F5871F;
+}
+
+.hidden {
+	background-color: #fff;
+}
