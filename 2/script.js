@@ -18,7 +18,7 @@
             return false;
         }
 
-        if($pos2 == '' || isNaN($pos2) || $pos2 <= 1 || $pos2 >= 9) {
+        if($pos2 == '' || isNaN($pos2) || $pos2 <= 0 || $pos2 >= 9) {
             alert('Неверные параметры');
             return false;
         }
@@ -63,17 +63,17 @@
                          }
                          break;
                      case 5:
-                         if (((x-2) > 0) && ((y+1 ) > 0)) {
+                         if (((x-2) > 0) && ((y+1 ) <= 8)) {
                              $arr.push($decode[x-=2] + (y+=1));
                          }
                          break;
                      case 6:
-                         if (((x+2) > 0) && ((y-1 ) > 0)) {
+                         if (((x+2) <= 8) && ((y-1 ) > 0)) {
                              $arr.push($decode[x+=2] + (y-=1));
                          }
                          break;
                      case 7:
-                         if (((x+2) > 0) && ((y+1 ) > 0)) {
+                         if (((x+2) <= 8) && ((y+1 ) <= 8)) {
                              $arr.push($decode[x+=2] + (y+=1));
                          }
                          break;
